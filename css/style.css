@@ -2,6 +2,24 @@
   --color-base-primary: hsl(25, 97%, 53%);
   --color-base-bg: hsl(216, 12%, 8%);
   --color-base-text: hsl(217, 12%, 63%);
+
+  /* button */
+  --color-base-btn-bg-read: hsl(145, 63%, 42%);
+  --color-base-btn-text-read: hsl(0, 0%, 100%);
+  --color-base-btn-bg-read-hover: hsl(145, 63%, 52%);
+
+  --color-base-btn-bg-not-read: hsl(0, 76%, 60%);
+  --color-base-btn-text-not-read: hsl(0, 0%, 100%);
+  --color-base-btn-bg-not-read-hover: hsl(0, 76%, 70%);
+  /* --color-base-btn-bg-not-read-hover: hsl(0, 86%, 50%); */
+  /* --color-base-btn-bg-not-read-hover: hsl(0, 100%, 54%); */
+
+  --color-base-btn-bg-remove: hsl(210, 50%, 35%); /* Deep, elegant blue */
+  --color-base-btn-text-remove: hsl(0, 0%, 100%); /* White */
+  --color-base-btn-bg-remove-hover: hsl(210, 50%, 45%);
+}
+
+:root {
 }
 
 /* --- GLOBAL RESET --- */
@@ -87,34 +105,34 @@
   /* column-gap: 150px; */
 }
 
-.book-card .btn {
-  /* width: 100%; */
-  /* display: block; */
-}
-
-.book-card button:first-of-type {
-  background-color: var(--color-base-primary);
-  color: white;
-}
-
-.book-card button:first-of-type.is-read {
-  background-color: var(--color-base-primary);
-  color: white;
-}
-
-.book-card button:last-of-type {
-  background-color: var(--color-base-bg);
-  color: var(--color-base-text);
-}
+/* --- Button --- */
 
 .book-card button.read {
-  background-color: greenyellow;
-  /* color: white; */
+  background-color: var(--color-base-btn-bg-read);
+  color: var(--color-base-btn-text-read);
+}
+
+.book-card button.read:hover {
+  background-color: var(--color-base-btn-bg-read-hover);
 }
 
 .book-card button.not-read {
-  background-color: red;
+  background-color: var(--color-base-btn-bg-not-read);
+  color: var(--color-base-btn-text-not-read);
   /* color: white; */
+}
+
+.book-card button.not-read:hover {
+  background-color: var(--color-base-btn-bg-not-read-hover);
+}
+
+.book-card button.btn-remove {
+  background-color: var(--color-base-btn-bg-remove);
+  color: var(--color-base-btn-text-remove);
+}
+
+.book-card button.btn-remove:hover {
+  background-color: var(--color-base-btn-bg-remove-hover);
 }
 
 /* --- MODAL --- */
@@ -202,4 +220,10 @@
 .fa-github {
   /* color: var(--color-base-primary-green); */
   margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .book-cards-container {
+    grid-template-columns: 1fr;
+  }
 }

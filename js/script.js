@@ -82,7 +82,7 @@ function displayBooks() {
       <p>Title: ${book.title}</p>
       <p>Author: ${book.author}</p>
       <p>Pages: ${book.pages}</p>
-      <button class="btn ${book.isRead ? "read" : "not-read"}">
+      <button class="btn btn-read ${book.isRead ? "read" : "not-read"}">
           ${book.isRead ? "Read" : "Not Read"}
       </button>
       <button class="btn btn-remove" data-id="${index}">Remove</button> 
@@ -95,6 +95,30 @@ function displayBooks() {
   document.querySelectorAll(".btn-remove").forEach((btn) => {
     btn.addEventListener("click", function () {
       removeBookFromLibrary(this.dataset.id);
+    });
+  });
+
+  // Add event listeners to the read buttons
+  document.querySelectorAll(".btn-read").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // Find the parent element, which is common to both buttons
+      const parentElement = this.closest(".book-card");
+
+      // From the parent, find the remove button to access its dataset
+      const removeBtn = parentElement.querySelector(".btn-remove");
+
+      // Now you can safely access the dataset.id from the remove button
+      if (this.classList.contains("not-read")) {
+        this.classList.replace("not-read", "read");
+        this.textContent = "Read";
+        myLibrary[removeBtn.dataset.id].isRead = true;
+        console.log(myLibrary[removeBtn.dataset.id]);
+      } else {
+        this.classList.replace("read", "not-read");
+        this.textContent = "Not Read";
+        myLibrary[removeBtn.dataset.id].isRead = false;
+        console.log(myLibrary[removeBtn.dataset.id]);
+      }
     });
   });
 }
@@ -121,7 +145,7 @@ function resetModal() {
   bookIsRead.checked = false;
 }
 
-// --- Helper Functions --- //
+// --- Validate Functions --- //
 function validateRequiredFields(
   bookTitleValue,
   bookAuthorValue,
