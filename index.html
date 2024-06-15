@@ -45,18 +45,20 @@
                     <form class="add-book-form" id="addBookForm">
                         <h3>Add new Book</h3>
 
-                        <input type="text" name="book-title" id="book-name" placeholder="Title">
+                        <input type="text" name="book-title" id="book-title" maxlength="100" placeholder="Title"
+                            required>
 
-                        <input type="text" name="book-author" id="book-author" placeholder="Author">
+                        <input type="text" name="book-author" id="book-author" placeholder="Author" maxlength="100"
+                            required>
 
-                        <input type="number" name="book-pages" id="book-pages" placeholder="Pages">
+                        <input type="number" name="book-pages" id="book-pages" placeholder="Pages" max="10000" required>
 
-                        <div class="is-read">
+                        <div>
                             <label for="is-read">Have you read it?</label>
-                            <input class="checkbox" type="checkbox" id="isRead" />
+                            <input class="checkbox" type="checkbox" id="is-read" name="is-read" />
                         </div>
 
-                        <button class="btn">Submit</button>
+                        <button type="submit" class="btn add-book-btn">Submit</button>
                     </form>
                 </div>
             </div>
@@ -69,8 +71,8 @@
                     </p>
                     <p>Title: Test 1</p>
                     <p>Pages: Test 1</p>
-                    <button class="btn">Read</button>
-                    <button class="btn">Remove</button>
+                    <button class="btn read">Read</button>
+                    <button class="btn btn-remove">Remove</button>
                 </div>
 
                 <div class="book-card">
@@ -93,7 +95,7 @@
                     <button class="btn">Remove</button>
                 </div>
 
-                <div class="book-card">
+                <!-- <div class="book-card">
                     <p>Author:
                         <span class="author">Test 1</span>
                     </p>
@@ -101,7 +103,7 @@
                     <p>Pages: Test 1</p>
                     <button class="btn">Read</button>
                     <button class="btn">Remove</button>
-                </div>
+                </div> -->
 
 
             </div>

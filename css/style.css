@@ -77,9 +77,9 @@
 .book-card {
   border: 2px solid blue;
 
-  /* height: 300px; */
   padding: 20px;
   border-radius: 10px;
+  height: 300px;
 
   display: grid;
   align-content: space-between;
@@ -97,9 +97,24 @@
   color: white;
 }
 
+.book-card button:first-of-type.is-read {
+  background-color: var(--color-base-primary);
+  color: white;
+}
+
 .book-card button:last-of-type {
   background-color: var(--color-base-bg);
   color: var(--color-base-text);
+}
+
+.book-card button.read {
+  background-color: greenyellow;
+  /* color: white; */
+}
+
+.book-card button.not-read {
+  background-color: red;
+  /* color: white; */
 }
 
 /* --- MODAL --- */
