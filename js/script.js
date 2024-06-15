@@ -79,9 +79,9 @@ function displayBooks() {
 
     // Add the book details to the card
     bookCard.innerHTML = `
-      <p>Title: ${book.title}</p>
-      <p>Author: ${book.author}</p>
-      <p>Pages: ${book.pages}</p>
+      <p class="text">Title: <span class="sub-text">${book.title}</span></p>
+      <p class="text">Author: <span class="sub-text">${book.author}</span></p>
+      <p class="text">Pages: <span class="sub-text">${book.pages}</span></p>
       <button class="btn btn-read ${book.isRead ? "read" : "not-read"}">
           ${book.isRead ? "Read" : "Not Read"}
       </button>

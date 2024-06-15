@@ -1,7 +1,9 @@
 :root {
-  --color-base-primary: hsl(25, 97%, 53%);
-  --color-base-bg: hsl(216, 12%, 8%);
+  --color-base-primary: hsl(210, 50%, 35%);
+  --color-base-bg: hsl(0, 0%, 95%);
   --color-base-text: hsl(217, 12%, 63%);
+
+  --color-base-card-bg: hsl(0, 0%, 98%);
 
   /* button */
   --color-base-btn-bg-read: hsl(145, 63%, 42%);
@@ -11,15 +13,10 @@
   --color-base-btn-bg-not-read: hsl(0, 76%, 60%);
   --color-base-btn-text-not-read: hsl(0, 0%, 100%);
   --color-base-btn-bg-not-read-hover: hsl(0, 76%, 70%);
-  /* --color-base-btn-bg-not-read-hover: hsl(0, 86%, 50%); */
-  /* --color-base-btn-bg-not-read-hover: hsl(0, 100%, 54%); */
 
-  --color-base-btn-bg-remove: hsl(210, 50%, 35%); /* Deep, elegant blue */
-  --color-base-btn-text-remove: hsl(0, 0%, 100%); /* White */
+  --color-base-btn-bg-remove: hsl(210, 50%, 35%);
+  --color-base-btn-text-remove: hsl(0, 0%, 100%);
   --color-base-btn-bg-remove-hover: hsl(210, 50%, 45%);
-}
-
-:root {
 }
 
 /* --- GLOBAL RESET --- */
@@ -61,17 +58,14 @@
   font-size: 1rem;
 }
 
-.header .btn {
-  /* display: block; */
-  /* width: 20%; */
-}
-
 .content {
   /* border: 2px solid green; */
   /* padding: 20px; */
   display: grid;
   /* grid-template-rows: 1.5fr 5fr; */
-  grid-template-rows: minmax(100px, 1fr) 5fr;
+  /* grid-template-rows: minmax(100px, 1fr) 4fr; */
+
+  background-color: var(--color-base-bg);
 }
 
 .add-book-container {
@@ -93,7 +87,9 @@
 }
 
 .book-card {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
+  background-color: var(--color-base-card-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds depth */
 
   padding: 20px;
   border-radius: 10px;
@@ -103,9 +99,46 @@
   align-content: space-between;
   gap: 20px;
   /* column-gap: 150px; */
+
+  font-size: 1.2rem;
+}
+
+.book-card .text {
+  /* font-weight: bold; */
+  font-style: italic;
+
+  /* display: flex; */
+  /* justify-content: center; */
+
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+
+  /* justify-items: center; */
+  align-items: center;
+
+  /* border: 1px solid green; */
+  /* width: 100%; */
+}
+
+.book-card span.sub-text {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.4rem;
+
+  justify-self: center;
+
+  /* border: 1px solid red; */
+  /* display: flex;
+  justify-content: center; */
+  /* width: 90%; */
 }
 
 /* --- Button --- */
+
+.book-card button {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
 
 .book-card button.read {
   background-color: var(--color-base-btn-bg-read);
