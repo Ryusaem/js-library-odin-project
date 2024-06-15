@@ -104,20 +104,23 @@ function displayBooks() {
       // Find the parent element, which is common to both buttons
       const parentElement = this.closest(".book-card");
 
-      // From the parent, find the remove button to access its dataset
+      // From the parent, find the "remove button" to access its dataset
       const removeBtn = parentElement.querySelector(".btn-remove");
+
+      // Access the dataset from the remove button
+      const dataSetID = removeBtn.dataset.id;
 
       // Now you can safely access the dataset.id from the remove button
       if (this.classList.contains("not-read")) {
         this.classList.replace("not-read", "read");
         this.textContent = "Read";
-        myLibrary[removeBtn.dataset.id].isRead = true;
-        console.log(myLibrary[removeBtn.dataset.id]);
+
+        myLibrary[dataSetID].isRead = true; // Update the isRead property
       } else {
         this.classList.replace("read", "not-read");
         this.textContent = "Not Read";
-        myLibrary[removeBtn.dataset.id].isRead = false;
-        console.log(myLibrary[removeBtn.dataset.id]);
+
+        myLibrary[dataSetID].isRead = false; // Update the isRead property
       }
     });
   });
